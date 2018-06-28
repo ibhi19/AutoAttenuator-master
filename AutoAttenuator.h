@@ -5,7 +5,7 @@ Written by		: Shubhi Rofiddinsa
 Supervised by	: Daniel Merk, Peter Straube
 
 Purpose:
-- As a substitute for the mechanical knobs of BP0505/A
+- As a substitute for the mechanical knobs
 - Controls and read data from the board
 */
 
