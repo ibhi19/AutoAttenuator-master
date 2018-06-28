@@ -31,28 +31,26 @@ class Attenuator
 		
 		// Functions to the board
 		// Attenuation settings
-		void setAtt10();
-		void setAtt20();
-		void setAtt30();
-		void setAtt40();
-		void setAtt50();
-		void setAtt60();
+		int setAtt10();
+		int setAtt20();
+		int setAtt30();
+		int setAtt40();
+		int setAtt50();
+		int setAtt60();
 		
 		// choosing between set or read actual attenuation
 		void chooseMode();
 		
-		// choosing attenuation
-		void chooseAttenuation();
+		// choosing/set attenuation
+		void setAttenuation();
+		
+		// read attenuation
+		void readAttenuation();
 		
 		// displaying messages to choose
 		void displayChoice();
 		void displayAtt();
 		
-		// set attenuation
-		void setAttenuation();
-		
-		// read attenuation
-		int readAttenuation();
 };
 
 #endif

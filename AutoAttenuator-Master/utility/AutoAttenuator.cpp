@@ -16,6 +16,9 @@ Purpose:
 String messageAtt = "Choose Attenuation from 10-60dB.";
 String messageChoice = "Choose between set or read attenuation.";
 
+// Variable to pass value
+int attenuationValue;
+
 // Overloading constructors
 Attenuator::Attenuator()
 {
@@ -39,8 +42,10 @@ Attenuator::Attenuator(int pin_1, int pin_2, int pin_3, int pin_4, int pin_5)
 
 // Attenuation settings from 10-60dB
 
-void Attenuator::setAtt10()
+int Attenuator::setAtt10()
 {
+	int attVal = 10;
+	
 	Serial.println("You selected 10dB!\n");
 	digitalWrite(pin1, LOW);
 	digitalWrite(pin2, LOW);
@@ -49,10 +54,14 @@ void Attenuator::setAtt10()
 	digitalWrite(pin5, LOW);
 	
 	delay(1000);
+	
+	return attenuationValue = attVal;
 }
 
-void Attenuator::setAtt20()
+int Attenuator::setAtt20()
 {
+	int attVal = 20;
+	
 	Serial.println("You selected 20dB!\n");
 	digitalWrite(pin1, LOW);
 	digitalWrite(pin2, LOW);
@@ -69,10 +78,13 @@ void Attenuator::setAtt20()
 	digitalWrite(pin5, HIGH);
 	
 	delay(1000);
+	
+	return attenuationValue = attVal;
 }
-
-void Attenuator::setAtt30()
+int Attenuator::setAtt30()
 {
+	int attVal = 30;
+	
 	Serial.println("You selected 30dB!\n");
 	digitalWrite(pin1, LOW);
 	digitalWrite(pin2, LOW);
@@ -87,10 +99,14 @@ void Attenuator::setAtt30()
 	digitalWrite(pin4, HIGH);
 	
 	delay(1000);
+	
+	return attenuationValue = attVal;
 }
 
-void Attenuator::setAtt40()
+int Attenuator::setAtt40()
 {
+	int attVal = 40;
+	
 	Serial.println("You selected 40dB!\n");
 	digitalWrite(pin1, LOW);
 	digitalWrite(pin2, LOW);
@@ -105,10 +121,14 @@ void Attenuator::setAtt40()
 	digitalWrite(pin3, HIGH);
 	
 	delay(1000);
+	
+	return attenuationValue = attVal;
 }
 
-void Attenuator::setAtt50()
+int Attenuator::setAtt50()
 {
+	int attVal = 50;
+	
 	Serial.println("You selected 50dB!\n");
 	digitalWrite(pin1, LOW);
 	digitalWrite(pin2, LOW);
@@ -122,10 +142,14 @@ void Attenuator::setAtt50()
 	digitalWrite(pin2, HIGH);
 	
 	delay(1000);
+	
+	return attenuationValue = attVal;
 }
 
-void Attenuator::setAtt60()
+int Attenuator::setAtt60()
 {
+	int attVal = 60;
+	
 	Serial.println("You selected 60dB!\n");
 	digitalWrite(pin1, LOW);
 	digitalWrite(pin2, LOW);
@@ -138,6 +162,8 @@ void Attenuator::setAtt60()
 	digitalWrite(pin1, HIGH);
 	
 	delay(1000);
+	
+	return attenuationValue = attVal;
 }
 
 // Choose mode
@@ -153,15 +179,18 @@ void Attenuator::chooseMode()
 	// Switch cases
 	switch(selectMode){
 		case '1':
-			chooseAttenuation();
+			setAttenuation();
+			break;
+		case '2':
+			readAttenuation();
 			break;
 		default:
 			Serial.println("Input not recognised! Choose again.\n");
 	}
 }
 
-// Choose attenuation
-void Attenuator::chooseAttenuation()
+// Choose/set attenuation
+void Attenuator::setAttenuation()
 {	
 	int selectAtt;
 	displayAtt();
@@ -194,6 +223,14 @@ void Attenuator::chooseAttenuation()
 			Serial.println("Wrong input! Choose again.\n");
 	}
 		
+}
+
+// read actual settings
+void Attenuator::readAttenuation()
+{
+	Serial.print("Actual setting:");
+	Serial.print(attenuationValue);
+	Serial.println(" dB\n");
 }
 
 // Functions to operate boards
