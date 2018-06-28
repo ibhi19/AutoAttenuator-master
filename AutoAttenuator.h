@@ -39,7 +39,7 @@ class Attenuator
 		int setAtt60();
 		
 		// choosing between set or read actual attenuation
-		void chooseMode();
+		void mainMenu();
 		
 		// choosing/set attenuation
 		void setAttenuation();

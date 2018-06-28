@@ -167,7 +167,7 @@ int Attenuator::setAtt60()
 }
 
 // Choose mode
-void Attenuator::chooseMode()
+void Attenuator::mainMenu()
 {
 	int selectMode;
 	displayChoice();
