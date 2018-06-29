@@ -15,6 +15,7 @@ Purpose:
 // Terminal messages
 String messageAtt = "Choose Attenuation from 10-60dB.";
 String mainMessage1 = "Main Menu";
+String separator = "----------------------------------";
 
 // Variable to pass value
 int attenuationValue;
@@ -203,6 +204,7 @@ int Attenuator::incAtt()
 			break;
 		case 60:
 			Serial.println("60dB is the maximum setting.\n");
+			Serial.println(separator);
 	}
 }
 
@@ -235,6 +237,7 @@ int Attenuator::decAtt()
 			break;
 		default:
 			Serial.println("10dB is the minimum setting.\n");
+			Serial.println(separator);
 	}
 }
 
@@ -264,6 +267,7 @@ void Attenuator::mainMenu()
 			break;
 		default:
 			Serial.println("Input not recognised! Choose again.\n");
+			Serial.println(separator);
 	}
 }
 
@@ -282,29 +286,36 @@ void Attenuator::setAttenuation()
 		case '1':
 			setAtt10();
 			Serial.println("You selected 10dB!\n");
+			Serial.println(separator);
 			break;
 		case '2':
 			setAtt20();
 			Serial.println("You selected 20dB!\n");
+			Serial.println(separator);
 			break;
 		case '3':
 			setAtt30();
 			Serial.println("You selected 30dB!\n");
+			Serial.println(separator);
 			break;
 		case '4':
 			setAtt40();
 			Serial.println("You selected 40dB!\n");
+			Serial.println(separator);
 			break;
 		case '5':
 			setAtt50();
 			Serial.println("You selected 50dB!\n");
+			Serial.println(separator);
 			break;
 		case '6':
 			setAtt60();
 			Serial.println("You selected 60dB!\n");
+			Serial.println(separator);
 			break;
 		default:
 			Serial.println("Input not recognised! Choose again.\n");
+			Serial.println(separator);
 	}
 		
 }
@@ -323,6 +334,7 @@ void Attenuator::readAttenuation()
 	Serial.print("Actual setting:");
 	Serial.print(updateAtt());
 	Serial.println(" dB\n");
+	Serial.println(separator);
 }
 
 // Functions to operate boards
