@@ -14,7 +14,7 @@ Purpose:
 
 // Terminal messages
 String messageAtt = "Choose Attenuation from 10-60dB.";
-String messageChoice = "Choose between set or read attenuation.";
+String mainMessage1 = "Main Menu";
 
 // Variable to pass value
 int attenuationValue;
@@ -329,7 +329,7 @@ void Attenuator::readAttenuation()
 
 void Attenuator::displayChoice()
 {
-	Serial.println(messageChoice);
+	Serial.println(mainMessage1);
 	Serial.println("1. Set Attenuation");
 	Serial.println("2. Read Attenuation");
 	Serial.println("3. +10dB");
