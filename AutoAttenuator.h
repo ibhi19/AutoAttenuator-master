@@ -38,6 +38,10 @@ class Attenuator
 		int setAtt50();
 		int setAtt60();
 		
+		// Increment/Decrement attenuation
+		int incAtt();		// + 10dB increment
+		int decAtt();		// - 10dB decrement
+		
 		// choosing between set or read actual attenuation
 		void mainMenu();
 		
