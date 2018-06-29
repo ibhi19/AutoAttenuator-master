@@ -45,6 +45,9 @@ class Attenuator
 		// choosing between set or read actual attenuation
 		void mainMenu();
 		
+		// update function
+		int updateAtt();
+		
 		// choosing/set attenuation
 		void setAttenuation();
 		
