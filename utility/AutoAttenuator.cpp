@@ -265,6 +265,9 @@ void Attenuator::mainMenu()
 		case '4':
 			decAtt();
 			break;
+		case '5':
+			clearScreen();
+			break;
 		default:
 			Serial.println("Input not recognised! Choose again.\n");
 			Serial.println(separator);
@@ -345,8 +348,8 @@ void Attenuator::displayChoice()
 	Serial.println("1. Set Attenuation");
 	Serial.println("2. Read Attenuation");
 	Serial.println("3. +10dB");
-	Serial.println("4. -10dB\n");
-	Serial.println("5. Clear screen");
+	Serial.println("4. -10dB");
+	Serial.println("5. Clear screen\n");
 }
 
 void Attenuator::displayAtt()
