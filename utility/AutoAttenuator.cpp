@@ -366,8 +366,8 @@ void Attenuator::displayAtt()
 // clear screen functions (only use this with PuTTY)
 void Attenuator::clearScreen()
 {
+	Serial.write(27);			// ESC command
+	Serial.print("[2J");		// clear screen command
 	Serial.write(27);
-	Serial.print("[2J");
-	Serial.write(27);
-	Serial.print("[H");
+	Serial.print("[H");			// cursor to home command
 }
