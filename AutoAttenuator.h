@@ -58,6 +58,9 @@ class Attenuator
 		void displayChoice();
 		void displayAtt();
 		
+		// clear terminal screen (use this only with PuTTY or other Terminal programme)
+		void clearScreen();
+		
 };
 
 #endif

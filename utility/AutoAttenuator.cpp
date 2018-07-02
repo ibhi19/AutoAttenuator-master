@@ -346,6 +346,7 @@ void Attenuator::displayChoice()
 	Serial.println("2. Read Attenuation");
 	Serial.println("3. +10dB");
 	Serial.println("4. -10dB\n");
+	Serial.println("5. Clear screen");
 }
 
 void Attenuator::displayAtt()
@@ -357,4 +358,13 @@ void Attenuator::displayAtt()
 	Serial.println("4. 40dB");
 	Serial.println("5. 50dB");
 	Serial.println("6. 60dB");
+}
+
+// clear screen functions (only use this with PuTTY)
+void Attenuator::clearScreen()
+{
+	Serial.write(27);
+	Serial.print("[2J");
+	Serial.write(27);
+	Serial.print("[H");
 }
