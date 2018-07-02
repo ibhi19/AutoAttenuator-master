@@ -370,4 +370,5 @@ void Attenuator::clearScreen()
 	Serial.print("[2J");		// clear screen command
 	Serial.write(27);
 	Serial.print("[H");			// cursor to home command
+	Serial.println("Auto Attenuator BP0505/A\n");
 }
